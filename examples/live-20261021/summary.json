@@ -1,0 +1,546 @@
+{
+  "testDate": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "environment": {
+    "os": "Windows",
+    "browser": "Chrome 155.0.8059.86",
+    "automation": "Playwright 1.62.1",
+    "viewport": "1440x1100",
+    "locale": "zh-CN",
+    "profile": "fresh anonymous context",
+    "proxy": "user-provided local proxy; no credentials"
+  },
+  "scope": "24 airline entries; visible UI query attempts only; no login, passenger details, orders or payment",
+  "counts": {
+    "查询未取得结果": 1,
+    "明确全价产品": 7,
+    "仅航班列表": 2,
+    "仅航段公布价": 3,
+    "表单操作未完成": 2,
+    "访问受阻": 1,
+    "查询页访问受阻": 1,
+    "仅Y舱报价": 2,
+    "需登录接续": 2,
+    "查询页报错": 1,
+    "未找到票价查询入口": 1,
+    "会话失效": 1
+  },
+  "records": [
+    {
+      "code": "CA",
+      "name": "中国国航",
+      "status": "查询未取得结果",
+      "actualDate": "2026-10-22",
+      "route": "PEK→SHA",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "查询页提示“查询无结果”；日历有价格不等于航班列表成功。",
+      "pageCheckedAt": "2026-10-21T19:53:35+08:00",
+      "publicPage": "https://www.airchina.com.cn/flight/oneway/pek-sha/2026-10-22",
+      "images": [
+        {
+          "file": "CA-final-overview.png",
+          "sha256": "74b0b9a0e20bcb647fb6a4ac08c7cb98356ab302157ef6c9a2f43773332a25b8",
+          "savedAt": "2026-10-21T19:53:35+08:00"
+        }
+      ]
+    },
+    {
+      "code": "MU",
+      "name": "中国东航",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-22",
+      "route": "SHA→PKX",
+      "flight": "MU5137",
+      "priceEvidence": "经济舱全价；CNY 2150；不含税；舱位代码未展示",
+      "note": "展开目标航班的全价卡，未补写 Y 代码。",
+      "pageCheckedAt": "2026-10-21T19:53:35+08:00",
+      "publicPage": "https://www.ceair.com/zh/cny/shopping/oneway/SHA,PVG-PEK,PKX,QIP(R),VAP(R),BJP(R),IWP(R),BXP(R),VNP(R),FTP(R)/2026-10-22",
+      "images": [
+        {
+          "file": "MU-overview.png",
+          "sha256": "84efe53894537f4e46dae0e1a462462209379bae5bf412d5064fbed43f6b36fe",
+          "savedAt": "2026-10-21T19:31:52+08:00"
+        },
+        {
+          "file": "MU-fullfare.png",
+          "sha256": "8202a27d10f1e2e1e163ee570ccc79eb0186cd471534b8771555586d94a7f137",
+          "savedAt": "2026-10-21T19:31:52+08:00"
+        }
+      ]
+    },
+    {
+      "code": "FM",
+      "name": "上海航空",
+      "status": "仅航班列表",
+      "actualDate": "2026-10-22",
+      "route": "SHA→PKX",
+      "flight": "FM9101",
+      "priceEvidence": "—",
+      "note": "东航官网列出 FM9101；本次未取得其展开全价证据，不能沿用 MU 的结果。",
+      "pageCheckedAt": "2026-10-21T19:57:45+08:00",
+      "publicPage": "https://www.ceair.com/zh/cny/shopping/oneway/SHA,PVG-PEK,PKX,QIP(R),VAP(R),BJP(R),IWP(R),BXP(R),VNP(R),FTP(R)/2026-10-22",
+      "images": [
+        {
+          "file": "FM-final-overview.png",
+          "sha256": "84efe53894537f4e46dae0e1a462462209379bae5bf412d5064fbed43f6b36fe",
+          "savedAt": "2026-10-21T19:57:45+08:00"
+        },
+        {
+          "file": "FM-final-detail.png",
+          "sha256": "ca5709cb790f438fb212c789ceed5c6ec3fb8ae71d05f6297f504b3517f7b543",
+          "savedAt": "2026-10-21T19:57:45+08:00"
+        }
+      ]
+    },
+    {
+      "code": "KN",
+      "name": "中国联航",
+      "status": "仅航段公布价",
+      "actualDate": "2026-10-22",
+      "route": "PKX→SHA",
+      "flight": "KN5955",
+      "priceEvidence": "民航公布正常价 CNY 1630；税费口径未展示",
+      "note": "页头公布价适用于该航段；航班列表另示 820 元起，未取得可购买 Y 舱全价产品。",
+      "pageCheckedAt": "2026-10-21T19:57:44+08:00",
+      "publicPage": "https://www.flycua.com/ticket/search/bjs-261022-sha--1----",
+      "images": [
+        {
+          "file": "KN-final-overview.png",
+          "sha256": "001f333b09de5a0a985e30ada2062eb0ede4c727b23c7b3212e976dee8f730c8",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        }
+      ]
+    },
+    {
+      "code": "CZ",
+      "name": "中国南航",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-22",
+      "route": "CAN→PKX",
+      "flight": "CZ3099",
+      "priceEvidence": "全价经济舱 / Y舱 / 全价；CNY 3060；税费口径未展示",
+      "note": "展开 CZ3099 明细；关闭站点提示后取证。",
+      "pageCheckedAt": "2026-10-21T19:57:43+08:00",
+      "publicPage": "https://b2c.csair.com/B2C40/newTrips/static/main/page/booking/index.html",
+      "images": [
+        {
+          "file": "CZ-final-overview.png",
+          "sha256": "3630ac96ed83a6c13e107918be47371b4e038f33a3ef08097c2242c60c753b77",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        },
+        {
+          "file": "CZ-final-detail.png",
+          "sha256": "bd3a4e7726abd502aff474e30ae4b0181c664dd1e0d3d8cf66c537895f86882a",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        }
+      ]
+    },
+    {
+      "code": "HU",
+      "name": "海南航空",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-21",
+      "route": "HAK→PEK",
+      "flight": "HU7581",
+      "priceEvidence": "全价经济舱 / Y舱；CNY 4190；不含税费",
+      "note": "实际起飞日为 10-21，到达 10-22。城市选择后日期回写，按结果实录，不能写成 10-22 起飞。",
+      "pageCheckedAt": "2026-10-21T19:57:43+08:00",
+      "publicPage": "https://new.hnair.com/hainanair/ibe/air/searchResults.do",
+      "images": [
+        {
+          "file": "HU-final-overview.png",
+          "sha256": "caa45f949f973efdce47ced79c45733a1c787a2ade97fbb9fec41adcb093ef96",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        },
+        {
+          "file": "HU-final-detail.png",
+          "sha256": "d00fa3cbefc9b63b1c05694459052ba31337ce2d9d2f597bc65f38af85d0d374",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        }
+      ]
+    },
+    {
+      "code": "GS",
+      "name": "天津航空",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-22",
+      "route": "TSN→SHA",
+      "flight": "GS7883",
+      "priceEvidence": "全价经济 / Y舱 / 10折；CNY 2170；税费口径未展示",
+      "note": "页头另有“天航经济舱全价 ¥2170”；正常滚动保留产品明细。",
+      "pageCheckedAt": "2026-10-21T19:57:43+08:00",
+      "publicPage": "https://www.tianjin-air.com/flights/results/TSN-SHA-261022-100-0",
+      "images": [
+        {
+          "file": "GS-final-overview.png",
+          "sha256": "6487a3275b295105e78cb1b7c7682216f835cc7987e97ed93c269fad1f20135f",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        },
+        {
+          "file": "GS-full-product.png",
+          "sha256": "b73f12df2a860d54c777feccea67b3312bb47bdead8a3cd583c9100949ff3a75",
+          "savedAt": "2026-10-21T20:04:29+08:00"
+        }
+      ]
+    },
+    {
+      "code": "8L",
+      "name": "祥鹏航空",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-22",
+      "route": "KMG→PEK",
+      "flight": "8L9987",
+      "priceEvidence": "全价经济舱 / Y舱；CNY 3380；税费口径未展示",
+      "note": "结果同时含海航及中转产品，核对 8L9987 直飞行；用概览、航班行、全价明细三张原图关联。",
+      "pageCheckedAt": "2026-10-21T19:57:43+08:00",
+      "publicPage": "https://www.luckyair.net/micro/main/flight/search",
+      "images": [
+        {
+          "file": "8L-final-overview.png",
+          "sha256": "dca37184392c3b414fb74b0be7ef98bfab98a482d6c1aaa97afb932c8f37ca21",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        },
+        {
+          "file": "8L-flight-context.png",
+          "sha256": "3d0181270ca2f9b39da6b2b8d474e75ab72ffd708638a637a4a3505d0dacf77b",
+          "savedAt": "2026-10-21T20:04:31+08:00"
+        },
+        {
+          "file": "8L-final-detail.png",
+          "sha256": "e9cf420a98aa533ff614e4433207b5cbeaa9f34b147dff28f9aeb0ab04eaa8b5",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        }
+      ]
+    },
+    {
+      "code": "PN",
+      "name": "西部航空",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-22",
+      "route": "CKG→CAN",
+      "flight": "PN6205",
+      "priceEvidence": "全价经济舱 / Y舱；CNY 2180；税费口径未展示",
+      "note": "正常关闭广告及后续通知，展开经济舱。",
+      "pageCheckedAt": "2026-10-21T19:57:43+08:00",
+      "publicPage": "https://www.westair.cn/flights/results/CKG-CAN-261022-100-0",
+      "images": [
+        {
+          "file": "PN-final-overview.png",
+          "sha256": "f54060edc82923ef9475e12a83a577185e6c3b0bdbc0175f2d8a0362ddbe3fe8",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        },
+        {
+          "file": "PN-final-detail.png",
+          "sha256": "a31783dbc8e1dd3536d0bc42674587b14f959ab8d5105b16855432e403d97f35",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        }
+      ]
+    },
+    {
+      "code": "UQ",
+      "name": "乌鲁木齐航空",
+      "status": "表单操作未完成",
+      "actualDate": "未核验",
+      "route": "目标 URC→CGO；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "目标日期 2026-10-22。城市候选及提交未得到可核验结果；仅确认门户可访问，不判定网站故障。",
+      "pageCheckedAt": "2026-10-21T19:57:46+08:00",
+      "publicPage": "https://www.urumqi-air.com/",
+      "images": [
+        {
+          "file": "UQ-final-overview.png",
+          "sha256": "ead4af30fad71ac7d7f74f91911cc32e2cbe1ebf8f96cbd582783e8502e018e3",
+          "savedAt": "2026-10-21T19:57:46+08:00"
+        }
+      ]
+    },
+    {
+      "code": "JD",
+      "name": "首都航空",
+      "status": "访问受阻",
+      "actualDate": "未核验",
+      "route": "未进入查询",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "官网返回 403 Forbidden，未继续绕过访问限制。",
+      "pageCheckedAt": "2026-10-21T19:53:36+08:00",
+      "publicPage": "https://www.jdair.net/",
+      "images": [
+        {
+          "file": "JD-final-overview.png",
+          "sha256": "b9f941041ea32ac776c332a3dba990143b1ada1b96462ce5bddffc46938d0775",
+          "savedAt": "2026-10-21T19:53:36+08:00"
+        }
+      ]
+    },
+    {
+      "code": "ZH",
+      "name": "深圳航空",
+      "status": "查询页访问受阻",
+      "actualDate": "未核验",
+      "route": "目标 SZX→PEK；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "门户可访问；提交查询后浏览器错误页显示 HTTP ERROR 418。目标日期 2026-10-22，未获得可核验结果。",
+      "pageCheckedAt": "2026-10-21T19:57:45+08:00",
+      "publicPage": "https://www.shenzhenair.com/szair_B2C/",
+      "images": [
+        {
+          "file": "ZH-final-overview.png",
+          "sha256": "7c7a75b9c58dc3b7be22483a066fca13fbefe1b1a14dec841a3890e83f7f4e46",
+          "savedAt": "2026-10-21T19:57:45+08:00"
+        }
+      ]
+    },
+    {
+      "code": "SC",
+      "name": "山东航空",
+      "status": "明确全价产品",
+      "actualDate": "2026-10-22",
+      "route": "TNA→SHA",
+      "flight": "SC1165",
+      "priceEvidence": "全价经济舱 / Y舱；CNY 1437；已减3元；税费口径未展示",
+      "note": "这是带优惠提示的全价产品售价，不能当无优惠公布原价。本轮 TNA→PEK 未取得航班后，另选 TNA→SHA 测试。",
+      "pageCheckedAt": "2026-10-21T19:57:43+08:00",
+      "publicPage": "https://flights.sda.cn/flight/search/tna-sha-261022-1",
+      "images": [
+        {
+          "file": "SC-final-overview.png",
+          "sha256": "9d0ccc8549369de2082e1b4972e59d30825a6227a5d2aa36ef3f1a8ee0a4f010",
+          "savedAt": "2026-10-21T19:57:43+08:00"
+        },
+        {
+          "file": "SC-final-detail.png",
+          "sha256": "84470d3f7e0bf69dc58b6436c7f23532eaa944da5381f04cf4344d2147ea8c2f",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        }
+      ]
+    },
+    {
+      "code": "MF",
+      "name": "厦门航空",
+      "status": "仅Y舱报价",
+      "actualDate": "2026-10-22",
+      "route": "XMN→PKX",
+      "flight": "MF8117",
+      "priceEvidence": "经济舱 (Y)；CNY 3090；税费口径未展示",
+      "note": "页面未见明确“全价”标签；只确认 Y 报价，不提升为全价已确认。",
+      "pageCheckedAt": "2026-10-21T19:57:44+08:00",
+      "publicPage": "https://www.xiamenair.com/zh-cn/nticket.html",
+      "images": [
+        {
+          "file": "MF-final-overview.png",
+          "sha256": "f25fd5be01c3f16ce999d02a631d5b382d58f174c2d5d20dbf5c391059c9a245",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        }
+      ]
+    },
+    {
+      "code": "HO",
+      "name": "吉祥航空",
+      "status": "仅航段公布价",
+      "actualDate": "2026-10-22",
+      "route": "PVG→PKX",
+      "flight": "HO1257",
+      "priceEvidence": "公布价 CNY 2150（不含税）；标准经济舱 Y 售价 CNY 1785",
+      "note": "公布价与 Y 产品售价不同；两种口径分别记录，不以 Y 售价覆盖公布价。",
+      "pageCheckedAt": "2026-10-21T19:57:44+08:00",
+      "publicPage": "https://www.juneyaoair.com/flightQuery",
+      "images": [
+        {
+          "file": "HO-final-overview.png",
+          "sha256": "b66980393f154a2e699ee6e0f83f6711448e5e241cb0160396aedd76a7834b44",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        },
+        {
+          "file": "HO-expanded.png",
+          "sha256": "5d3274a31647d49cd18c5a70a8537a65d970592564194717052d20359774cac0",
+          "savedAt": "2026-10-21T19:23:13+08:00"
+        },
+        {
+          "file": "HO-Y-detail.png",
+          "sha256": "dcaba57558f41fa3f80cec048e9b52aef88045329007bfcfe22578b5f6ff6b44",
+          "savedAt": "2026-10-21T19:31:52+08:00"
+        }
+      ]
+    },
+    {
+      "code": "9C",
+      "name": "春秋航空",
+      "status": "仅航段公布价",
+      "actualDate": "2026-10-23",
+      "route": "SHA→CAN",
+      "flight": "9C8855",
+      "priceEvidence": "民航公布价 CNY 2350；税费口径未展示",
+      "note": "航班售价 730 元起是另一口径；没有取得标准 Y 全价产品。日期为本轮自由选取的测试日。",
+      "pageCheckedAt": "2026-10-21T19:57:44+08:00",
+      "publicPage": "https://flights.ch.com/SHA-CAN.html",
+      "images": [
+        {
+          "file": "9C-final-overview.png",
+          "sha256": "c9e0822f9902c6c2055b9634d7a6e9736d1939d0b21337cdd9a4f52a691ce5f7",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        }
+      ]
+    },
+    {
+      "code": "3U",
+      "name": "四川航空",
+      "status": "仅航班列表",
+      "actualDate": "2026-10-22",
+      "route": "CTU→PEK（所选示例行）",
+      "flight": "3U8897",
+      "priceEvidence": "经典经济舱 CNY 2950；未确认全价",
+      "note": "结果混有双流、天府及共享航班；不能因查询城市或最贵经济产品就认定指定机场 / 全价。",
+      "pageCheckedAt": "2026-10-21T19:57:45+08:00",
+      "publicPage": "https://flights.sichuanair.com/3uair/ibe/ticket/ctu-bjs.html",
+      "images": [
+        {
+          "file": "3U-final-overview.png",
+          "sha256": "018e9c47c98ec964fc57cf7628f2b412ce89c9c57dadf98f1175829dfac55df0",
+          "savedAt": "2026-10-21T19:57:45+08:00"
+        }
+      ]
+    },
+    {
+      "code": "G5",
+      "name": "华夏航空",
+      "status": "需登录接续",
+      "actualDate": "未核验",
+      "route": "目标 CKG→KWE；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "表单目标日期 2026-10-23；提交后进入官方登录页，未登录，未核验价格。",
+      "pageCheckedAt": "2026-10-21T19:53:36+08:00",
+      "publicPage": "https://www.chinaexpressair.com/b2cweb/login",
+      "images": [
+        {
+          "file": "G5-final-overview.png",
+          "sha256": "4c50b3c981a4ac6735b4cdb737be664c32f5742951224d1d6608729f10977f4b",
+          "savedAt": "2026-10-21T19:53:37+08:00"
+        }
+      ]
+    },
+    {
+      "code": "GJ",
+      "name": "长龙航空",
+      "status": "需登录接续",
+      "actualDate": "未核验",
+      "route": "目标 HGH→PEK；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "表单目标日期 2026-10-22；提交后进入 #/login。新入口 loongair.cn 可访问。",
+      "pageCheckedAt": "2026-10-21T19:53:37+08:00",
+      "publicPage": "https://www.loongair.cn/#/login",
+      "images": [
+        {
+          "file": "GJ-final-overview.png",
+          "sha256": "023086ec07641b5fc51a75b09fd30915641d1fbc7caa2c283e6c6db25229ca9d",
+          "savedAt": "2026-10-21T19:53:37+08:00"
+        }
+      ]
+    },
+    {
+      "code": "EU",
+      "name": "成都航空",
+      "status": "查询页报错",
+      "actualDate": "未核验",
+      "route": "目标 成都→北京大兴；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "表单目标日期 2026-10-22；正常提交后返回 Whitelabel Error Page / status 500。新入口 cdal.com.cn 可访问。",
+      "pageCheckedAt": "2026-10-21T19:53:37+08:00",
+      "publicPage": "https://www.cdal.com.cn/stdair//homepage",
+      "images": [
+        {
+          "file": "EU-final-overview.png",
+          "sha256": "4c9bc15af001ac7a59e2de8c8dc10b3679bb206b400d57076bc87374342f46a3",
+          "savedAt": "2026-10-21T19:53:37+08:00"
+        }
+      ]
+    },
+    {
+      "code": "KY",
+      "name": "昆明航空",
+      "status": "表单操作未完成",
+      "actualDate": "未核验",
+      "route": "目标 KMG→PEK；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "目标日期 2026-10-22；可填写城市和日期，提交后仍在首页，未核验结果。不据此判断官网无票或故障。",
+      "pageCheckedAt": "2026-10-21T19:57:45+08:00",
+      "publicPage": "https://www.airkunming.com/#/",
+      "images": [
+        {
+          "file": "KY-final-overview.png",
+          "sha256": "a9f718c804ffd7728290396326cfb2b6379c9431db4f16118bdfb5379cd48aad",
+          "savedAt": "2026-10-21T19:57:45+08:00"
+        }
+      ]
+    },
+    {
+      "code": "TV",
+      "name": "西藏航空",
+      "status": "仅Y舱报价",
+      "actualDate": "2026-10-22",
+      "route": "CTU→LXA",
+      "flight": "TV9885",
+      "priceEvidence": "标准经济舱 / 舱位Y；CNY 2810；不含税",
+      "note": "正常处理隐私与入藏提示后查询成功；未见明确全价标签，未将身份限定产品混入普通票价。",
+      "pageCheckedAt": "2026-10-21T19:57:44+08:00",
+      "publicPage": "https://www.airxizang.com/stdair/searchResults/searchResultsOnewayTSDF",
+      "images": [
+        {
+          "file": "TV-final-overview.png",
+          "sha256": "b0366c1e44643e79cdf4039ab8fdf552d26a363893cb8abf6b1710d5b6a826bc",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        },
+        {
+          "file": "TV-final-detail.png",
+          "sha256": "9e9b90294ba05dccf236812ccc4af7ef46ae717f34e39283e0c6b43567351827",
+          "savedAt": "2026-10-21T19:57:44+08:00"
+        }
+      ]
+    },
+    {
+      "code": "BK",
+      "name": "奥凯航空",
+      "status": "未找到票价查询入口",
+      "actualDate": "未核验",
+      "route": "未进入票价查询",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "本次首页可见航班动态查询，未找到可完成票价查询的公开入口；不推断该航司没有线上售票。",
+      "pageCheckedAt": "2026-10-21T19:53:37+08:00",
+      "publicPage": "https://www.okair.net/#/",
+      "images": [
+        {
+          "file": "BK-final-overview.png",
+          "sha256": "d659609202744005c974f4c52c4cea08ee2e37be012af237943fb9b90f7d83fa",
+          "savedAt": "2026-10-21T19:53:37+08:00"
+        }
+      ]
+    },
+    {
+      "code": "DZ",
+      "name": "东海航空",
+      "status": "会话失效",
+      "actualDate": "未核验",
+      "route": "推荐航线 SZX→CGO；结果未核验",
+      "flight": "—",
+      "priceEvidence": "—",
+      "note": "点击官网深圳→郑州推荐航线后，订票页提示“会话已过期，请重新登录”；未核验查询日期和价格。",
+      "pageCheckedAt": "2026-10-21T19:53:37+08:00",
+      "publicPage": "https://www.donghaiair.com/html/booking-manage/choose-flight-two.html",
+      "images": [
+        {
+          "file": "DZ-final-overview.png",
+          "sha256": "4ce68f9c1d26a8c83c684d73bd616aeba4bc97557a9ffa6e0b5b4285072b36c2",
+          "savedAt": "2026-10-21T19:53:37+08:00"
+        }
+      ]
+    }
+  ]
+}

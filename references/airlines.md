@@ -2,38 +2,38 @@
 
 按航班号前两位**字母或数字**查入口。未收录的航司先搜索其官网并核对身份，不依赖搜索广告。跨域订票入口须由官网链接确认，不因域名相似就输入账户信息。
 
-入口收录不等于完整查询通过。以下 CA/MU/CZ/HU 操作笔记继承自作者 2026-10-21 的记录；本次维护未重新完成端到端查询。选择器、URL、库存和日期可选状态都会变化，失败就回到当前官网表单，不循环套用旧脚本。
+入口收录不等于完整查询通过。2026-10-21 已逐家访问 24 个入口并尝试可进行的查询，详见 [本轮实测报告和原始截图](live-tests-20261021.md)。下方保留作者历史操作笔记；本轮新证据与失败原因以报告为准。选择器、URL、库存和日期可选状态都会变化，失败就回到当前官网表单，不循环套用旧脚本。
 
 ## 入口表
 
 | 二字码 | 航司 | 官网入口 | 说明 |
 |---|---|---|---|
-| CA | 中国国航 | https://www.airchina.com.cn | 有历史查询笔记 |
-| MU | 中国东航 | https://www.ceair.com | 有历史查询笔记 |
-| FM | 上海航空 | https://www.ceair.com | 从东航官方入口核对 FM 航班 |
-| KN | 中国联航 | https://www.flycua.com | 独立入口 |
-| CZ | 中国南航 | https://www.csair.com | 官方结果页曾在 b2c.csair.com |
-| HU | 海南航空 | https://www.hnair.com | 官方订票入口曾在 new.hnair.com |
-| GS | 天津航空 | https://www.tianjin-air.com | 独立入口，未完成价格查询复测 |
-| 8L | 祥鹏航空 | https://www.luckyair.net | 独立入口，未完成价格查询复测 |
-| PN | 西部航空 | https://www.westair.cn | 独立入口，未完成价格查询复测 |
-| UQ | 乌鲁木齐航空 | https://www.urumqi-air.com | 独立入口，未完成价格查询复测 |
-| JD | 首都航空 | https://www.jdair.net | 独立入口；不能假设只能在海航查 |
-| ZH | 深圳航空 | https://www.shenzhenair.com | 仅收录入口 |
-| SC | 山东航空 | https://www.shandongair.com.cn | 仅收录入口 |
-| MF | 厦门航空 | https://www.xiamenair.com | 仅收录入口 |
-| HO | 吉祥航空 | https://www.juneyaoair.com | 仅收录入口 |
-| 9C | 春秋航空 | https://www.ch.com | 不假设有标准 Y 舱全价 |
-| 3U | 四川航空 | https://www.sichuanair.com | 仅收录入口 |
-| G5 | 华夏航空 | https://www.chinaexpressair.com | 仅收录入口 |
-| GJ | 长龙航空 | https://www.loongair.com.cn | 仅收录入口 |
-| EU | 成都航空 | https://www.chengduair.cc | 仅收录入口 |
-| KY | 昆明航空 | https://www.airkunming.com | 仅收录入口 |
-| TV | 西藏航空 | https://www.tibetairlines.com.cn | 仅收录入口 |
-| BK | 奥凯航空 | https://www.okair.net | 仅收录入口 |
-| DZ | 东海航空 | https://www.donghaiair.com | 仅收录入口 |
+| CA | 中国国航 | https://www.airchina.com.cn | 查询未取得结果；详见本轮报告 |
+| MU | 中国东航 | https://www.ceair.com | 明确全价产品；详见本轮报告 |
+| FM | 上海航空 | https://www.ceair.com | 仅航班列表；详见本轮报告 |
+| KN | 中国联航 | https://www.flycua.com | 仅航段公布价；详见本轮报告 |
+| CZ | 中国南航 | https://www.csair.com | 明确全价产品；详见本轮报告 |
+| HU | 海南航空 | https://www.hnair.com | 明确全价产品；详见本轮报告 |
+| GS | 天津航空 | https://www.tianjin-air.com | 明确全价产品；详见本轮报告 |
+| 8L | 祥鹏航空 | https://www.luckyair.net | 明确全价产品；详见本轮报告 |
+| PN | 西部航空 | https://www.westair.cn | 明确全价产品；详见本轮报告 |
+| UQ | 乌鲁木齐航空 | https://www.urumqi-air.com | 表单操作未完成；详见本轮报告 |
+| JD | 首都航空 | https://www.jdair.net | 访问受阻；详见本轮报告 |
+| ZH | 深圳航空 | https://www.shenzhenair.com | 查询页访问受阻；详见本轮报告 |
+| SC | 山东航空 | https://www.sda.cn | 明确全价产品；详见本轮报告 |
+| MF | 厦门航空 | https://www.xiamenair.com | 仅Y舱报价；详见本轮报告 |
+| HO | 吉祥航空 | https://www.juneyaoair.com | 仅航段公布价；详见本轮报告 |
+| 9C | 春秋航空 | https://www.ch.com | 仅航段公布价；详见本轮报告 |
+| 3U | 四川航空 | https://www.sichuanair.com | 仅航班列表；详见本轮报告 |
+| G5 | 华夏航空 | https://www.chinaexpressair.com | 需登录接续；详见本轮报告 |
+| GJ | 长龙航空 | https://www.loongair.cn | 需登录接续；详见本轮报告 |
+| EU | 成都航空 | https://www.cdal.com.cn/stdair/homepage | 查询页报错；详见本轮报告 |
+| KY | 昆明航空 | https://www.airkunming.com | 表单操作未完成；详见本轮报告 |
+| TV | 西藏航空 | https://www.tibetairlines.com.cn | 仅Y舱报价；详见本轮报告 |
+| BK | 奥凯航空 | https://www.okair.net | 未找到票价查询入口；详见本轮报告 |
+| DZ | 东海航空 | https://www.donghaiair.com | 会话失效；详见本轮报告 |
 
-GS/8L/PN/UQ 的独立入口由各航司官网页面核对（2026-10-21）；JD 入口由[首都航空官方文件](https://www.jdair.net/fecms.pub.bucket.jd/YZJD0310.pdf)核对。这只确认入口，不确认当前订票链路或 Y 舱库存。其他入口继承自原版，使用时继续验证。
+全部入口均有本轮浏览器记录；只有表中抽查航线的相应证据得到确认。JD 入口另由[首都航空官方文件](https://www.jdair.net/fecms.pub.bucket.jd/YZJD0310.pdf)核对，本轮访问为 403。需要登录或本次未完成的入口仍可保留，但不能标成全价查询通过。
 
 ## 通用操作
 
@@ -41,7 +41,9 @@ GS/8L/PN/UQ 的独立入口由各航司官网页面核对（2026-10-21）；JD �
 - 使用浏览器工具自带的点击/填写，不把 DOM `dispatchEvent()` 当作真实用户事件；合成事件不具有相同的信任状态，也不能解决所有前端状态问题。
 - 航班号可能带空白或换行，按“完整二字码 + 完整数值部分”匹配，避免 `CA1501` 命中 `CA15010`。
 - 弹窗用页面提供的关闭/确认控件处理，关闭后读取状态再点击价格。不要隐藏弹层、航班行或改写页面来取证。
-- 页面发生导航后读取新页面，不把“没出现 XHR”当作未提交。只保存实际可见、展开的明细。
+- 页面发生导航后读取新页面，同时检查新打开的标签页；山航本轮从首页打开独立结果页。不把“没出现 XHR”当作未提交，只保存实际可见、展开的明细。
+- 单站点内连续完成城市、日期和提交；跨页操作可能关闭候选框。同名输入可能有隐藏副本，定位当前可见控件，提交后再核对完整日期和实际机场。
+- 明确分开记录航段公布价、Y 舱售价和优惠后产品售价。本轮 HO 公布价与 Y 售价不同，SC 全价产品同时有“已减3元”；MF/TV 仅见 Y 标签，未提升为全价确认。
 
 ## CA：中国国航（作者历史笔记，2026-10-21）
 
