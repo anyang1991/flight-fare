@@ -18,7 +18,7 @@
 | 8L | 祥鹏航空 | https://www.luckyair.net | 明确全价产品；详见本轮报告 |
 | PN | 西部航空 | https://www.westair.cn | 明确全价产品；详见本轮报告 |
 | UQ | 乌鲁木齐航空 | https://www.urumqi-air.com | 表单操作未完成；详见本轮报告 |
-| JD | 首都航空 | https://www.jdair.net | 访问受阻；详见本轮报告 |
+| JD | 首都航空 | https://www.jdair.net | 两轮均受阻:官网 403,海航系统航班动态校验异常;走海航订票系统,航线用其"航班动态"查 |
 | ZH | 深圳航空 | https://www.shenzhenair.com | 查询页访问受阻；详见本轮报告 |
 | SC | 山东航空 | https://www.sda.cn | 明确全价产品；详见本轮报告 |
 | MF | 厦门航空 | https://www.xiamenair.com | 仅Y舱报价；详见本轮报告 |
@@ -28,10 +28,10 @@
 | G5 | 华夏航空 | https://www.chinaexpressair.com | 需登录接续；详见本轮报告 |
 | GJ | 长龙航空 | https://www.loongair.cn | 需登录接续；详见本轮报告 |
 | EU | 成都航空 | https://www.cdal.com.cn/stdair/homepage | 查询页报错；详见本轮报告 |
-| KY | 昆明航空 | https://www.airkunming.com | 表单操作未完成；详见本轮报告 |
-| TV | 西藏航空 | https://www.tibetairlines.com.cn | 仅Y舱报价；详见本轮报告 |
+| KY | 昆明航空 | https://www.airkunming.com | 提交需真实鼠标点击;第二轮 KMG→PEK 四个日期均无该司航班 |
+| TV | 西藏航空 | https://www.tibetairlines.com.cn | 第一轮(Playwright)获 Y ¥2810;城市候选对 CDP 鼠标事件不响应,需原生点击工具 |
 | BK | 奥凯航空 | https://www.okair.net | 未找到票价查询入口；详见本轮报告 |
-| DZ | 东海航空 | https://www.donghaiair.com | 会话失效；详见本轮报告 |
+| DZ | 东海航空 | https://www.donghaiair.com | 两轮均"会话已过期",手填航线直连订票入口也复现,疑似接口强制登录会话 |
 
 全部入口均有本轮浏览器记录；只有表中抽查航线的相应证据得到确认。JD 入口另由[首都航空官方文件](https://www.jdair.net/fecms.pub.bucket.jd/YZJD0310.pdf)核对，本轮访问为 403。需要登录或本次未完成的入口仍可保留，但不能标成全价查询通过。
 
