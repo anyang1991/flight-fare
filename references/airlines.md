@@ -30,7 +30,7 @@
 | EU | 成都航空 | https://www.cdal.com.cn/stdair/homepage | 查询页报错；详见本轮报告 |
 | KY | 昆明航空 | https://www.airkunming.com | 提交需真实鼠标点击;第二轮 KMG→PEK 四个日期均无该司航班 |
 | TV | 西藏航空 | https://www.tibetairlines.com.cn | 第一轮(Playwright)获 Y ¥2810;城市候选对 CDP 鼠标事件不响应,需原生点击工具 |
-| BK | 奥凯航空 | https://www.okair.net | 未找到票价查询入口；详见本轮报告 |
+| BK | 奥凯航空 | https://www.okair.net | 有订票表单,但查询需会员登录;需登录接续 |
 | DZ | 东海航空 | https://www.donghaiair.com | 两轮均"会话已过期",手填航线直连订票入口也复现,疑似接口强制登录会话 |
 
 全部入口均有本轮浏览器记录；只有表中抽查航线的相应证据得到确认。JD 入口另由[首都航空官方文件](https://www.jdair.net/fecms.pub.bucket.jd/YZJD0310.pdf)核对，本轮访问为 403。需要登录或本次未完成的入口仍可保留，但不能标成全价查询通过。
