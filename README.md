@@ -39,6 +39,43 @@ Windows PowerShell 将上面的目标改为 `"$HOME/.claude/skills/flight-fullfa
 
 将仓库放入该工具文档规定的 skills 目录，保留根目录的 `SKILL.md` 和 `references/`。不支持 skills 的工具可以显式读取这两个文件。遵守各宿主的工具限制，不需要固定的 proxy、端口或浏览器配置。ZCode 等工具的具体安装位置以各自文档为准。
 
+### 浏览器工具安装（必装其一；本节写给 agent，逐步执行即可）
+
+skill 只提供流程与站点经验，浏览器能力由宿主提供。三种方案任选其一：
+
+**方案 A：web-access（ZCode 生态；CDP 直连日常浏览器，天然携带登录态）**
+
+```sh
+git clone https://github.com/eze-is/web-access.git ~/.zcode/skills/web-access
+node ~/.zcode/skills/web-access/scripts/check-deps.mjs
+```
+
+前置：Node.js 22+、本机装有 Chrome 或 Edge。`check-deps` 退出码处理：
+
+- `0` → 就绪；
+- `2` → 未确定默认浏览器：把 `chrome` 或 `edge` 写入 `~/.zcode/skills/web-access/config.env` 的 `WEB_ACCESS_BROWSER=`，重跑；
+- `1` → 按 stdout 提示操作后重跑（通常是先手动打开一次浏览器即可自动解决）。
+
+**方案 B：Playwright MCP（Claude Code 等）**
+
+```sh
+claude mcp add playwright -- npx @playwright/mcp@latest
+```
+
+**方案 C：chrome-devtools MCP（Claude Code 等）**
+
+```sh
+claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+```
+
+就绪校验：方案 A 用 `curl http://localhost:3456/targets` 确认 proxy；方案 B/C 在 agent 会话中确认 MCP 工具已挂载。然后对 agent 说「查 MU5137 的全价经济舱截图」做端到端验证。
+
+### 代理环境注意（装不上时先看这里）
+
+- `git clone` / `git push` 长时间无响应，或报 `HTTP2 framing layer` / `Failed to connect to github.com port 443` → 本机代理指向了已失效的端口，或直连被阻：确认代理进程存活（如 `nc -z 127.0.0.1 7890`），为仓库配置 `git config http.proxy http://127.0.0.1:7890`，或改直连。
+- `curl` 下载 zip 返回 200 但解压报错 → 下载被静默截断，解压前务必 `unzip -t` 校验完整性。
+- 最稳的取文件方式：在浏览器页内 `fetch("https://raw.githubusercontent.com/anyang1991/flight-fare/main/SKILL.md")` 逐文件获取。
+
 ## 开始使用
 
 ```text
