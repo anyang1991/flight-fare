@@ -1,0 +1,4 @@
+interface:
+  display_name: "航班全价经济舱截图"
+  short_description: "查询航空公司官网全价经济舱，保存原始截图及含日期、税费口径的记录"
+  default_prompt: "使用 $flight-fullfare-screenshot 查询指定航班的官网全价经济舱价格，核对日期与税费口径并保存原始截图。"

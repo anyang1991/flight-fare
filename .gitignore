@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+/报销截图/
+/dist/
+/work/
+.DS_Store
+Thumbs.db
