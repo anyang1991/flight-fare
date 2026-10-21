@@ -17,6 +17,7 @@
 | 8L | 祥鹏航空 | https://www.hnair.com | 海航系 |
 | PN | 西部航空 | https://www.hnair.com | 海航系 LCC |
 | UQ | 乌鲁木齐航空 | https://www.hnair.com | 海航系 |
+| JD | 首都航空 | https://new.hnair.com | 海航系;无独立订票入口,走海航订票系统,航线用海航"航班动态"按航班号查 |
 | ZH | 深圳航空 | https://www.shenzhenair.com | 国航系,独立官网 |
 | SC | 山东航空 | https://www.shandongair.com.cn | 国航系,独立官网 |
 | MF | 厦门航空 | https://www.xiamenair.com | 南航旗下,独立销售 |
@@ -33,11 +34,12 @@
 
 ## 通用经验(2026-10-21 实测)
 
-- **`el.click()` 在国航/东航的 React/Vue 页面上经常不生效,用 CDP `/clickAt`(真实鼠标事件)**。
+- **`el.click()` 在国航/东航的 React/Vue 页面上经常不生效,要用真实鼠标事件序列**;web-access 的 `/clickAt` 可用但有坐标漂移风险(内部先 scrollIntoView 再算坐标,时序差会点错位置),首选"单 eval 内 focus + mousedown→mouseup→click(带 clientX/Y)"——定位与点击同一次调用,无跨调用漂移。详见 SKILL.md「排障与稳定套路」。
 - 输入框赋值:用原生 setter + `dispatchEvent(new Event("input", {bubbles:true}))`,城市类输入框要等下拉出现后**点选项**(点城市级或机场级均可)。
 - 第三方航线查询现状(2026-10-21):飞常准 PC 站 502/强制跳 APP 下载页,m.variflight.com 连接关闭;百度搜索触发安全验证;Bing 对航班号几乎无结果。**不要依赖第三方查航线**——直接在航司官网按"城市对"搜索(如 上海→北京,城市级会覆盖虹桥/浦东、首都/大兴全部机场),在结果列表里确认目标航班号即可,航线就验证了。
 - CDP proxy 视口锁定 800×513,用 CDP `Emulation.setDeviceMetricsOverride` 改视口会被 proxy 重置。构图手段:`document.documentElement.style.zoom` 缩放 + 滚动;同屏放不下时,可隐藏与目标航班无关的列表行(`display:none`,等价于裁剪,不动证据元素本身)。
 - `body.innerText` 里航班号可能被拆成 "MU\n5137",找行时用 `/MU\s*\n?\s*5137/`。
+- 传输层/点击类通用排障(eval 中文常量乱码、clickAt 漂移、遮罩假点击、控件回写、POST 整页跳转等)统一沉淀在 SKILL.md「排障与稳定套路」,此处不重复。
 
 ### domain: www.airchina.com.cn (2026-10-21 验证)
 
@@ -90,6 +92,8 @@
 - 首页点"立即查询"可能不跳转也不开新 tab;稳定做法是走通一次拿到结果页 URL 模式,之后直接拼 URL 参数直达。
 - 行结构:`div.zls-flight > div.zls-flightInfoShow > div.zls-common`;隐藏无关行时对 `li.zls-flight-cell`(注意有 DIV/LI 同名 class,LI 是行)整体 `display:none`。
 - 当天日期可选(10-21 仍有报价),但目标航班当天可能已起飞,建议直接顺延一天。
+- 弹窗的全屏遮罩没关时,点价格格照样报 "clicked:true" 但毫无反应——点击无反应先关弹窗、再截图确认遮罩已消失。
+- 展开档位的线性文本顺序是"名称→详情→立即选购→**价格**"(价格在"立即选购"后面),按顺序对应档位别错位;可用 `折扣率 × 全价 ≈ 档位价` 交叉验证读数(如 6.2折 × ¥3060 ≈ ¥1900)。
 
 ### domain: new.hnair.com / www.hnair.com (2026-10-21 验证)
 
@@ -102,10 +106,14 @@
 #### 全价经济舱位置
 - 每行右侧 3 个价格列:公务舱 / 超级经济舱 / 经济舱,各是 `.ticket-price`("¥xxxx 起")+ ˅ 展开钮。
 - **点经济舱列展开钮**,行下出舱位表(`.dis-cabin` 组):超值折扣(K舱)/ 选购权益 / 特惠折扣(E舱)/ 基础折扣(Q舱)/ **"全价经济舱 | Y舱 | 全价 | ¥xxxx(不含税费) | 立即预订"**。可能另有"仅限本人预定"实名全价产品(brandname=FULLPRICE_REA),报销以标准 Y 舱公布价为准(北京-上海 ¥2150)。
+- 部分航司(如首都航空 JD)在海航系统内档位很少(可能只有 2 档),证据行形如"**首航全价 Y舱 全价 ¥xxxx(不含税费)**"——带"全价"字样即采信,不要因为档位少而怀疑没找对。
 
 #### 已知陷阱
 - **列表内容不在 `body.innerText`/`textContent`**(容器渲染属性导致,但 outerHTML 里有):航班卡 `.flight-info` / `.flight-list-item` 可直接 querySelectorAll 后逐个读 innerText;判断加载完成以卡片数量为准。
 - 航班号文本带空格:`HU 7605`,匹配用 `/HU\s*7605/`。
 - 客服悬浮层/cookie 弹窗/公告弹层(crew-dialog、crew-mask)会反复出现,每次点击前都要确认命中;隐藏会被重渲染还原,必要时隐藏+点击放同一个 eval。
 - 舱位明细预渲染在隐藏 HTML 里(每行 `.dis-cabin` 可达 200KB),是否展开用 `offsetParent`/`offsetHeight` 判断。
-- 海航系(HU/GS/8L/PN/UQ)共用此订票系统。
+- 海航系(HU/JD/GS/8L/PN/UQ)共用此订票系统。
+- **新版城市面板把事件绑在 focus 上,合成点击不触发 focus,点哪个城市都会写进错误的框**(实测"北京"被写成"三亚")。兜底做法:直接填 form 隐藏字段(`Origin/location=CITY_XXX_CN`、`location_type=true`、`location_input=中文城市名`,到达侧为 `Destination/location=...`)后 `form.submit()`,一次直达结果页。
+- 航班动态/订票是 **POST 整页跳转**(如 `flightDynamicResult.do`),没有 XHR——读 `form.action`/`form.method` 确认提交方式后直接 `form.submit()`,不要等异步结果容器出现。
+- 程序化给日期框设值会被日历控件回写重置(设成 10-22 又变回今天):**设值与提交放同一个 eval**,设完立刻 submit。

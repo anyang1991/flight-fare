@@ -83,6 +83,14 @@ claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
 > 三种方案对 SKILL.md 里的流程和站点经验完全等价。选 A 用 `curl http://localhost:3456/targets` 确认 proxy 就绪;选 B/C 在 agent 里确认 MCP 工具已挂载。
 > 全部就绪后,对 agent 说一句「查 MU5137 的全价经济舱截图」即可端到端验证。
 
+### 代理环境注意(装不上时先看这里)
+
+本机代理(如 Clash)失效或规则变动时的典型症状与对策:
+
+- `git clone` / `git push` 长时间无响应 → 代理配置指向了**已失效的本地端口**,确认代理进程存活,或临时改直连;
+- `curl` 下载 zip 返回 200 但解压报错 → 下载被静默截断,**解压前务必 `unzip -t` 校验完整性**;
+- 最稳的取文件方式:在浏览器页内 `fetch("https://raw.githubusercontent.com/anyang1991/flight-fare/main/SKILL.md")` 逐文件获取。
+
 ## 用法
 
 对 agent 直接说,例如:
