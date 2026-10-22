@@ -1,5 +1,7 @@
 # flight-fare ✈️
 
+[![validate](https://github.com/anyang1991/flight-fare/actions/workflows/validate.yml/badge.svg)](https://github.com/anyang1991/flight-fare/actions/workflows/validate.yml)
+
 给支持浏览器操作的 AI agent 使用的 [Agent Skill](https://agentskills.io/specification)：在航空公司官网查询指定航班的全价经济舱价格，保存原始截图和查询记录，供报销比价参考。
 
 **需要能操作网页并保存截图的浏览器工具。** 这是一套可复用的查询流程，不是独立爬虫，也不承诺绕过验证码、登录或官网限制。只有搜索能力的 agent 无法完成截图取证。
@@ -75,6 +77,8 @@ claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
 - `git clone` / `git push` 长时间无响应，或报 `HTTP2 framing layer` / `Failed to connect to github.com port 443` → 本机代理指向了已失效的端口，或直连被阻：确认代理进程存活（如 `nc -z 127.0.0.1 7890`），为仓库配置 `git config http.proxy http://127.0.0.1:7890`，或改直连。
 - `curl` 下载 zip 返回 200 但解压报错 → 下载被静默截断，解压前务必 `unzip -t` 校验完整性。
 - 最稳的取文件方式：在浏览器页内 `fetch("https://raw.githubusercontent.com/anyang1991/flight-fare/main/SKILL.md")` 逐文件获取。
+
+> 面向 skill 维护者的离线校验与测试说明在 [tests/README.md](tests/README.md)(`scripts/validate.py` 检查元数据、本地链接与安装命名;CI 逐 push 运行)。使用者无需执行。
 
 ## 开始使用
 

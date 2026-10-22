@@ -47,7 +47,7 @@ def validate(root, *, installed=False):
         if (not isinstance(description, str) or not description.strip()
                 or len(description) > 1024):
             errors.append("SKILL.md: description must contain 1-1024 characters")
-        allowed = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
+        allowed = {"name", "description", "license", "version", "updated", "compatibility", "metadata", "allowed-tools"}
         if set(meta) - allowed:
             errors.append(f"SKILL.md: unknown fields {sorted(set(meta) - allowed)}")
         for key, limit in (("license", None), ("compatibility", 500), ("allowed-tools", None)):

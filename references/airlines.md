@@ -8,30 +8,30 @@
 
 | 二字码 | 航司 | 官网入口 | 说明 |
 |---|---|---|---|
-| CA | 中国国航 | https://www.airchina.com.cn | 查询未取得结果；详见本轮报告 |
-| MU | 中国东航 | https://www.ceair.com | 明确全价产品；详见本轮报告 |
-| FM | 上海航空 | https://www.ceair.com | 仅航班列表；详见本轮报告 |
-| KN | 中国联航 | https://www.flycua.com | 仅航段公布价；详见本轮报告 |
-| CZ | 中国南航 | https://www.csair.com | 明确全价产品；详见本轮报告 |
-| HU | 海南航空 | https://www.hnair.com | 明确全价产品；详见本轮报告 |
-| GS | 天津航空 | https://www.tianjin-air.com | 明确全价产品；详见本轮报告 |
-| 8L | 祥鹏航空 | https://www.luckyair.net | 明确全价产品；详见本轮报告 |
-| PN | 西部航空 | https://www.westair.cn | 明确全价产品；详见本轮报告 |
-| UQ | 乌鲁木齐航空 | https://www.urumqi-air.com | 表单操作未完成；详见本轮报告 |
-| JD | 首都航空 | https://www.jdair.net | 两轮均受阻:官网 403,海航系统航班动态校验异常;走海航订票系统,航线用其"航班动态"查 |
-| ZH | 深圳航空 | https://www.shenzhenair.com | 查询页访问受阻；详见本轮报告 |
-| SC | 山东航空 | https://www.sda.cn | 明确全价产品；详见本轮报告 |
-| MF | 厦门航空 | https://www.xiamenair.com | 仅Y舱报价；详见本轮报告 |
-| HO | 吉祥航空 | https://www.juneyaoair.com | 仅航段公布价；详见本轮报告 |
-| 9C | 春秋航空 | https://www.ch.com | 仅航段公布价；详见本轮报告 |
-| 3U | 四川航空 | https://www.sichuanair.com | 仅航班列表；详见本轮报告 |
-| G5 | 华夏航空 | https://www.chinaexpressair.com | 需登录接续；详见本轮报告 |
-| GJ | 长龙航空 | https://www.loongair.cn | 需登录接续；详见本轮报告 |
-| EU | 成都航空 | https://www.cdal.com.cn/stdair/homepage | 查询页报错；详见本轮报告 |
-| KY | 昆明航空 | https://www.airkunming.com | 提交需真实鼠标点击;第二轮 KMG→PEK 四个日期均无该司航班 |
-| TV | 西藏航空 | https://www.tibetairlines.com.cn | 第一轮(Playwright)获 Y ¥2810;城市候选对 CDP 鼠标事件不响应,需原生点击工具 |
-| BK | 奥凯航空 | https://www.okair.net | 有订票表单,但查询需会员登录;需登录接续 |
-| DZ | 东海航空 | https://www.donghaiair.com | 两轮均"会话已过期",手填航线直连订票入口也复现,疑似接口强制登录会话 |
+| CA | 中国国航 | https://www.airchina.com.cn | 明确全价(10-23);[复测](live-tests-retest-20261021.md) |
+| MU | 中国东航 | https://www.ceair.com | 明确全价·两轮一致 ¥2150;[复测](live-tests-retest-20261021.md) |
+| FM | 上海航空 | https://www.ceair.com | 明确全价 ¥1490(上轮仅列表);[复测](live-tests-retest-20261021.md) |
+| KN | 中国联航 | https://www.flycua.com | 未确认全价·仅航段公布价 ¥1630;[复测](live-tests-retest-20261021.md) |
+| CZ | 中国南航 | https://www.csair.com | 明确全价·两轮一致 ¥3060;[复测](live-tests-retest-20261021.md) |
+| HU | 海南航空 | https://www.hnair.com | 明确全价·两轮一致 ¥4190;[复测](live-tests-retest-20261021.md) |
+| GS | 天津航空 | https://www.tianjin-air.com | 明确全价·两轮一致 ¥2170;[复测](live-tests-retest-20261021.md) |
+| 8L | 祥鹏航空 | https://www.luckyair.net | 明确全价·两轮一致 ¥3380;[复测](live-tests-retest-20261021.md) |
+| PN | 西部航空 | https://www.westair.cn | 明确全价·两轮一致 ¥2180;[复测](live-tests-retest-20261021.md) |
+| UQ | 乌鲁木齐航空 | https://www.urumqi-air.com | 明确全价 ¥2810(上轮受阻,10-23 经停);[复测](live-tests-retest-20261021.md) |
+| JD | 首都航空 | https://www.jdair.net | 受阻·官网403+航班动态校验异常;UI 纯路径待补测,程序化兜底见 hnair 条目;[阻塞类别与复试策略](live-tests-retest-20261021.md#阻塞类别与复试策略) |
+| ZH | 深圳航空 | https://www.shenzhenair.com | 未确认全价 ¥3650 无全价标签(上轮 418 未复现);[复测](live-tests-retest-20261021.md) |
+| SC | 山东航空 | https://www.sda.cn | 明确全价·两轮一致 ¥1437(带优惠标签);[复测](live-tests-retest-20261021.md) |
+| MF | 厦门航空 | https://www.xiamenair.com | 未确认全价·仅Y舱报价 ¥3090;[复测](live-tests-retest-20261021.md) |
+| HO | 吉祥航空 | https://www.juneyaoair.com | 未确认全价·公布价/Y售价双口径;[复测](live-tests-retest-20261021.md) |
+| 9C | 春秋航空 | https://www.ch.com | 未确认全价·仅航段公布价(LCC);[复测](live-tests-retest-20261021.md) |
+| 3U | 四川航空 | https://www.sichuanair.com | 明确全价 ¥2950(上轮仅列表);[复测](live-tests-retest-20261021.md) |
+| G5 | 华夏航空 | https://www.chinaexpressair.com | 受阻·登录墙,需登录接续;[阻塞类别与复试策略](live-tests-retest-20261021.md#阻塞类别与复试策略) |
+| GJ | 长龙航空 | https://www.loongair.cn | 受阻·登录墙,需登录接续;[阻塞类别与复试策略](live-tests-retest-20261021.md#阻塞类别与复试策略) |
+| EU | 成都航空 | https://www.cdal.com.cn/stdair/homepage | 未确认全价 Y ¥2450(上轮 500 未复现);[复测](live-tests-retest-20261021.md) |
+| KY | 昆明航空 | https://www.airkunming.com | 受阻·KMG→PEK 无该司航班(查询已通,需真实鼠标事件,[tooling-notes](tooling-notes.md));[阻塞类别](live-tests-retest-20261021.md#阻塞类别与复试策略) |
+| TV | 西藏航空 | https://www.tibetairlines.com.cn | 受阻·工具不响应([tooling-notes](tooling-notes.md));第一轮 Playwright 获 Y ¥2810;[阻塞类别](live-tests-retest-20261021.md#阻塞类别与复试策略) |
+| BK | 奥凯航空 | https://www.okair.net | 受阻·登录墙,需登录接续;[阻塞类别与复试策略](live-tests-retest-20261021.md#阻塞类别与复试策略) |
+| DZ | 东海航空 | https://www.donghaiair.com | 受阻·会话过期,疑似接口强制登录;[阻塞类别与复试策略](live-tests-retest-20261021.md#阻塞类别与复试策略) |
 
 全部入口均有本轮浏览器记录；只有表中抽查航线的相应证据得到确认。JD 入口另由[首都航空官方文件](https://www.jdair.net/fecms.pub.bucket.jd/YZJD0310.pdf)核对，本轮访问为 403。需要登录或本次未完成的入口仍可保留，但不能标成全价查询通过。
 
@@ -74,5 +74,6 @@
 - 经济舱展开钮曾在 `.ticket-price` 旁，明细容器曾含 `.dis-cabin`。
 - 普通全价行曾显示“全价经济舱 | Y舱 | 全价 | ¥…（不含税费）”。另有“仅限本人预定”等条件产品，不能混用。
 - 航班号可能带空格；明细可能预渲染但尚隐藏，必须展开并确认可见后截图。
-- 客服浮层或 cookie 提示使用正常关闭控件处理。表单若回写日期或写错城市，重新选择并核对；不要强填隐藏字段或抢在控件更新前提交。
+- 客服浮层或 cookie 提示使用正常关闭控件处理。表单回写日期或写错城市时的 **UI 纯路径**:点日期框弹日历 → 真实点击日期格 → 核对输入框值已变 → 点查询(2026-10-21 复测未尝试此路径,下轮优先补测)。
+- 控件仍阻塞时,允许**等价程序化提交**:填写用户请求的值后,设值与 `form.submit()` 必须在同一 eval 内完成(不给日历回写窗口)。结果页为站点真实响应,取证效力不变;须在汇总注明提交方式。禁的是篡改证据与替用户做未请求的选择,不是提交方式本身。
 - 403/风控时记录阻塞；不要为了取价关闭证书校验或擅自更改代理。此笔记不证明其他海航系航司使用相同库存或产品。
